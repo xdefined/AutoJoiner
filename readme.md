@@ -1,6 +1,6 @@
 # Bloxybet auto giveaway joiner [Not patched] 7-4-2024
 
-## Created by Failedtrades.
+Created by Failedtrades.
 
 ## This is a simple client side autojoiner.
 
