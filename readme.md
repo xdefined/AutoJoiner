@@ -1,16 +1,16 @@
 # Bloxybet auto giveaway joiner [Not patched] 7-4-2024
 
-##Created by Failedtrades.
+## Created by Failedtrades.
 
-##This is a simple client side autojoiner.
+## This is a simple client side autojoiner.
 
-##How do i add my auth??
+## How do i add my auth??
 Go to settings.json
 replace auth with your auth
 Done
 You can add multiple auths at the same time.
 
-##How do i get my auth?
+## How do i get my auth?
 Go to bloxybet.com
 go to developer tools
 go to application
