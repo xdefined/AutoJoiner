@@ -2,6 +2,7 @@
 
 # Updates
 ## UPDATE [DEBUG] 23-4-2024 [fixed websocket connection]
+## UPDATE [FIX] 23-4-2024 [connected to new api]
 
 Created by Failedtrades.
 
