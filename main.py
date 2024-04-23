@@ -33,11 +33,12 @@ def join(id, pet, value, host, game):
     }
                 requests.post('https://api.bloxybet.com/join_giveaway', headers=headers, json={'giveaway_id': id})
                 if count == 0:
+                    os.system('cls')
                     print(f'{colorama.Fore.GREEN}Joined giveaway')
                     print(
                         f"""{colorama.Fore.RESET}
 Host {host}       Pet {pet}          Total joined today
-Game {game}       Rap {value}                  {total}
+Game {game}             Rap {value}                        {total}
 """
                     )
                 count += 1
@@ -45,16 +46,17 @@ while True:
     print(f'{colorama.Fore.YELLOW}connecting to websocket! {credits}')
     try:
         headers = {
-        "Accept-Encoding": "gzip, deflate, br",
-        "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
-        "Cache-Control": "no-cache",
-        "Connection": "Upgrade",
-        "Host": "api.bloxybet.com",
-        "Origin": "https://www.bloxybet.com",
-        "Pragma": "no-cache",
-        "Upgrade": "websocket"
+  "Accept-Encoding": "gzip, deflate, br, zstd",
+  "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+  "Cache-Control": "no-cache",
+  "Connection": "Upgrade",
+  "Host": "api.bloxybet.com",
+  "Origin": "https://www.bloxybet.com",
+  "Pragma": "no-cache",
+  "Upgrade": "websocket",
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+}
 
-        }
         with connect('wss://api.bloxybet.com/giveaway_ws', additional_headers=headers) as websocket:
             os.system('cls')
             print(f'{colorama.Fore.GREEN}connected to websocket! {credits}')
@@ -70,9 +72,10 @@ while True:
                     if msg['_id'] in ids:
                         pass       
                     else:
+                        
                         print(f'Joining giveaway {credits}')
                         ids.append(msg["_id"])
                         total += msg['item']['value']
-                        join(msg['_id'], msg['item']['display_name'], msg['item']['value'], msg['host']['username'], msg['item']['gamr'])
-    except:
-        print(f'{colorama.Fore.RED} Error connecting. {credits}')
+                        join(msg['_id'], msg['item']['display_name'], msg['item']['value'], msg['host']['username'], msg['item']['game'])
+    except Exception as e:
+        print(f'{colorama.Fore.RED} Error connecting. {credits}\nERROR: {e}\nask for support')
