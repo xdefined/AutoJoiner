@@ -1,4 +1,7 @@
-# Bloxybet auto giveaway joiner [Not patched] 7-4-2024
+# Bloxybet auto giveaway joiner [Not patched] 7-4-2024 INITIAL RELEASE
+
+# Updates
+## UPDATE [DEBUG] 23-4-2024 [fixed websocket connection]
 
 Created by Failedtrades.
 
