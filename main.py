@@ -31,7 +31,7 @@ def join(id, pet, value, host, game):
                     "Sec-Fetch-Site": "same-site",
                     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
     }
-                requests.post('https://api.bloxybet.com/join_giveaway', headers=headers, json={'giveaway_id': id})
+                res = requests.post('https://api.bloxybet.com/join_giveaway', headers=headers, json={'giveaway_id': id})
                 if count == 0:
                     os.system('cls')
                     print(f'{colorama.Fore.GREEN}Joined giveaway')
@@ -39,6 +39,8 @@ def join(id, pet, value, host, game):
                         f"""{colorama.Fore.RESET}
 Host {host}       Pet {pet}          Total joined today
 Game {game}             Rap {value}                        {total}
+
+API RESPONSE > {res.json()['message']}
 """
                     )
                 count += 1
